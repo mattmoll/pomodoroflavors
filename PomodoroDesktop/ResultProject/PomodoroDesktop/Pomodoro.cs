@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PomodoroDesktop
@@ -6,7 +7,7 @@ namespace PomodoroDesktop
     public partial class Pomodoro : Form
     {
         private const int MINUTES_POMODORO = 25;
-        private const int MINUTES_SHORT_BREAK = 1;
+        private const int MINUTES_SHORT_BREAK = 5;
         private const int MINUTES_LONG_BREAK= 15;
 
         private readonly ICountdown _countdownTimer;
@@ -66,6 +67,10 @@ namespace PomodoroDesktop
             lblSeconds.Text = _countdownTimer.SecondsLeft.ToString("00");
         }
 
+        #region Hacky stuff for borderless window
+
+        private Point lastPoint;
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -81,5 +86,21 @@ namespace PomodoroDesktop
         {
             this.FormBorderStyle = FormBorderStyle.None;
         }
+
+        private void menuBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void menuBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        #endregion
     }
 }

@@ -39,12 +39,12 @@ namespace PomodoroDesktop
             this.btnStop = new System.Windows.Forms.Button();
             this.lblSeconds = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuBar = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPomodoro
@@ -53,7 +53,7 @@ namespace PomodoroDesktop
             this.btnPomodoro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPomodoro.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPomodoro.ForeColor = System.Drawing.Color.White;
-            this.btnPomodoro.Location = new System.Drawing.Point(200, 86);
+            this.btnPomodoro.Location = new System.Drawing.Point(200, 92);
             this.btnPomodoro.Name = "btnPomodoro";
             this.btnPomodoro.Size = new System.Drawing.Size(136, 44);
             this.btnPomodoro.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace PomodoroDesktop
             this.btnShortBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShortBreak.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnShortBreak.ForeColor = System.Drawing.Color.White;
-            this.btnShortBreak.Location = new System.Drawing.Point(406, 73);
+            this.btnShortBreak.Location = new System.Drawing.Point(394, 162);
             this.btnShortBreak.Name = "btnShortBreak";
             this.btnShortBreak.Size = new System.Drawing.Size(114, 33);
             this.btnShortBreak.TabIndex = 1;
@@ -81,7 +81,7 @@ namespace PomodoroDesktop
             this.btnLongBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLongBreak.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLongBreak.ForeColor = System.Drawing.Color.White;
-            this.btnLongBreak.Location = new System.Drawing.Point(406, 121);
+            this.btnLongBreak.Location = new System.Drawing.Point(394, 210);
             this.btnLongBreak.Name = "btnLongBreak";
             this.btnLongBreak.Size = new System.Drawing.Size(114, 34);
             this.btnLongBreak.TabIndex = 2;
@@ -155,16 +155,18 @@ namespace PomodoroDesktop
             this.label2.TabIndex = 9;
             this.label2.Text = ":";
             // 
-            // panel1
+            // menuBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.Brown;
-            this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-1, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 54);
-            this.panel1.TabIndex = 10;
+            this.menuBar.BackColor = System.Drawing.Color.Brown;
+            this.menuBar.Controls.Add(this.btnMinimize);
+            this.menuBar.Controls.Add(this.btnClose);
+            this.menuBar.Controls.Add(this.label1);
+            this.menuBar.Location = new System.Drawing.Point(-1, -2);
+            this.menuBar.Name = "menuBar";
+            this.menuBar.Size = new System.Drawing.Size(556, 54);
+            this.menuBar.TabIndex = 10;
+            this.menuBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuBar_MouseDown);
+            this.menuBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuBar_MouseMove);
             // 
             // btnMinimize
             // 
@@ -212,7 +214,7 @@ namespace PomodoroDesktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(548, 536);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuBar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSeconds);
             this.Controls.Add(this.btnStop);
@@ -229,8 +231,8 @@ namespace PomodoroDesktop
             this.Text = "Pomodoro";
             this.Activated += new System.EventHandler(this.Pomodoro_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.menuBar.ResumeLayout(false);
+            this.menuBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +249,7 @@ namespace PomodoroDesktop
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblSeconds;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel menuBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
