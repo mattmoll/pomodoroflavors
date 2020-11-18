@@ -66,5 +66,20 @@ namespace PomodoroDesktop
             lblSeconds.Text = _countdownTimer.SecondsLeft.ToString("00");
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Pomodoro_Activated(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+        }
     }
 }
