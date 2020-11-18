@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PomodoroDesktop
 {
-    interface ICountdown
+    public interface ICountdown
     {
         public int MinutesLeft { get; }
         public int SecondsLeft { get; }

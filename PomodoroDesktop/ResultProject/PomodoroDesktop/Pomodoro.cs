@@ -9,13 +9,14 @@ namespace PomodoroDesktop
         private const int MINUTES_SHORT_BREAK = 1;
         private const int MINUTES_LONG_BREAK= 15;
 
-        private ICountdown countdownTimer;
+        private readonly ICountdown _countdownTimer;
 
-        public Pomodoro()
+        public Pomodoro(ICountdown countdownTimer)
         {
             InitializeComponent();
-            this.countdownTimer = new Countdown();
-            this.countdownTimer.TickHappened += CountdownTimer_TickHappened;
+
+            _countdownTimer = countdownTimer;
+            _countdownTimer.TickHappened += CountdownTimer_TickHappened;
         }
 
         private void btnPomodoro_Click(object sender, EventArgs e)
@@ -35,11 +36,11 @@ namespace PomodoroDesktop
 
         private void StartCountdownTimer(int minutesToCountdown)
         {
-            countdownTimer.SetTime(minutesToCountdown);
+            _countdownTimer.SetTime(minutesToCountdown);
 
             UpdateCountdownOnScreen();
 
-            countdownTimer.StartCountdown();
+            _countdownTimer.StartCountdown();
         }
 
         private void CountdownTimer_TickHappened(object sender, EventArgs e)
@@ -48,21 +49,21 @@ namespace PomodoroDesktop
             {
                 UpdateCountdownOnScreen();
 
-                if (countdownTimer.IsTimeUp)
+                if (_countdownTimer.IsTimeUp)
                 {
-                    this.countdownTimer.StopCountdown();
+                    _countdownTimer.StopCountdown();
                     MessageBox.Show(this, "Time is up!", "Timer");
                 }
             }));
         }
 
-        private void btnStart_Click(object sender, EventArgs e) => this.countdownTimer.StartCountdown();
-        private void btnStop_Click(object sender, EventArgs e) => this.countdownTimer.StopCountdown();
+        private void btnStart_Click(object sender, EventArgs e) => _countdownTimer.StartCountdown();
+        private void btnStop_Click(object sender, EventArgs e) => _countdownTimer.StopCountdown();
 
         private void UpdateCountdownOnScreen()
         {
-            lblMinutes.Text = countdownTimer.MinutesLeft.ToString("00");
-            lblSeconds.Text = countdownTimer.SecondsLeft.ToString("00");
+            lblMinutes.Text = _countdownTimer.MinutesLeft.ToString("00");
+            lblSeconds.Text = _countdownTimer.SecondsLeft.ToString("00");
         }
 
     }

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,20 @@ namespace PomodoroDesktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pomodoro());
+
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+
+            using (ServiceProvider serviceProvider = services.BuildServiceProvider())
+            {
+                var countdownService = serviceProvider.GetRequiredService<ICountdown>();
+                Application.Run(new Pomodoro(countdownService));
+            }    
+        }
+
+        private static void ConfigureServices(ServiceCollection services)
+        {
+            services.AddSingleton<ICountdown, Countdown>();
         }
     }
 }
