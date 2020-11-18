@@ -29,14 +29,12 @@ namespace PomodoroDesktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pomodoro));
             this.btnPomodoro = new System.Windows.Forms.Button();
             this.btnShortBreak = new System.Windows.Forms.Button();
             this.btnLongBreak = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.pbImage = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblMinutes = new System.Windows.Forms.Label();
             this.btnStop = new System.Windows.Forms.Button();
             this.lblSeconds = new System.Windows.Forms.Label();
@@ -52,6 +50,7 @@ namespace PomodoroDesktop
             this.btnPomodoro.TabIndex = 0;
             this.btnPomodoro.Text = "Pomodoro";
             this.btnPomodoro.UseVisualStyleBackColor = true;
+            this.btnPomodoro.Click += new System.EventHandler(this.btnPomodoro_Click);
             // 
             // btnShortBreak
             // 
@@ -61,6 +60,7 @@ namespace PomodoroDesktop
             this.btnShortBreak.TabIndex = 1;
             this.btnShortBreak.Text = "Short Break";
             this.btnShortBreak.UseVisualStyleBackColor = true;
+            this.btnShortBreak.Click += new System.EventHandler(this.btnShortBreak_Click);
             // 
             // btnLongBreak
             // 
@@ -70,15 +70,17 @@ namespace PomodoroDesktop
             this.btnLongBreak.TabIndex = 2;
             this.btnLongBreak.Text = "Long Break";
             this.btnLongBreak.UseVisualStyleBackColor = true;
+            this.btnLongBreak.Click += new System.EventHandler(this.btnLongBreak_Click);
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(144, 462);
+            this.btnStart.Location = new System.Drawing.Point(144, 468);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(101, 42);
             this.btnStart.TabIndex = 3;
             this.btnStart.Text = "START";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // pbImage
             // 
@@ -93,7 +95,7 @@ namespace PomodoroDesktop
             // 
             this.lblMinutes.AutoSize = true;
             this.lblMinutes.Font = new System.Drawing.Font("Book Antiqua", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMinutes.Location = new System.Drawing.Point(146, 357);
+            this.lblMinutes.Location = new System.Drawing.Point(146, 355);
             this.lblMinutes.Name = "lblMinutes";
             this.lblMinutes.Size = new System.Drawing.Size(120, 95);
             this.lblMinutes.TabIndex = 6;
@@ -101,18 +103,19 @@ namespace PomodoroDesktop
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(292, 462);
+            this.btnStop.Location = new System.Drawing.Point(292, 468);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(101, 42);
             this.btnStop.TabIndex = 7;
             this.btnStop.Text = "STOP";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // lblSeconds
             // 
             this.lblSeconds.AutoSize = true;
             this.lblSeconds.Font = new System.Drawing.Font("Book Antiqua", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblSeconds.Location = new System.Drawing.Point(275, 357);
+            this.lblSeconds.Location = new System.Drawing.Point(275, 355);
             this.lblSeconds.Name = "lblSeconds";
             this.lblSeconds.Size = new System.Drawing.Size(120, 95);
             this.lblSeconds.TabIndex = 8;
@@ -121,7 +124,7 @@ namespace PomodoroDesktop
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Book Antiqua", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(240, 353);
+            this.label2.Location = new System.Drawing.Point(240, 351);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 95);
             this.label2.TabIndex = 9;
@@ -158,7 +161,6 @@ namespace PomodoroDesktop
         private System.Windows.Forms.Button btnLongBreak;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.PictureBox pbImage;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblMinutes;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblSeconds;
