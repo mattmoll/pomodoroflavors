@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30523.141
+VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroDesktop", "PomodoroDesktop\PomodoroDesktop.csproj", "{D496DD68-9919-4D64-B328-3F02E4B4E166}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroDesktop", "PomodoroDesktop\PomodoroDesktop.csproj", "{78657EBB-2DC2-4510-AC3E-6669882ADE30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D496DD68-9919-4D64-B328-3F02E4B4E166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D496DD68-9919-4D64-B328-3F02E4B4E166}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D496DD68-9919-4D64-B328-3F02E4B4E166}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D496DD68-9919-4D64-B328-3F02E4B4E166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78657EBB-2DC2-4510-AC3E-6669882ADE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78657EBB-2DC2-4510-AC3E-6669882ADE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78657EBB-2DC2-4510-AC3E-6669882ADE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78657EBB-2DC2-4510-AC3E-6669882ADE30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {653DC23B-95FD-4584-8162-895F36AD9888}
+		SolutionGuid = {F94C886D-781D-4CEA-821C-7FA7C0325EA7}
 	EndGlobalSection
 EndGlobal
